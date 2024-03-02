@@ -1,0 +1,8 @@
+.app {
+  display: flex;
+  gap: 24px;
+  max-width: 1500px;
+  padding: 32px 24px;
+  margin: auto;
+  justify-content: space-around;
+}

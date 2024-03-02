@@ -1,0 +1,30 @@
+.personal-details {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.personal-details,
+.personal-details * {
+  background-color: white;
+}
+
+.personal-details h2 {
+  font-size: 2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.input-group input {
+  padding: 0.3rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: rgb(235, 219, 219);
+}
