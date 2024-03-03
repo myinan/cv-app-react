@@ -1,4 +1,11 @@
-.personal-details {
+.edit-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.personal-details,
+.education-details {
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -6,11 +13,14 @@
 }
 
 .personal-details,
-.personal-details * {
+.personal-details *,
+.education-details,
+.education-details * {
   background-color: white;
 }
 
-.personal-details h2 {
+.personal-details h2,
+.education-details h2 {
   font-size: 2rem;
 }
 

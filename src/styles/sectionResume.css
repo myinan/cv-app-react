@@ -10,6 +10,25 @@
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
   background-color: aqua;
+}
+
+.personal-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 2rem;
+}
+
+.personal-info,
+.personal-info * {
+  background-color: yellowgreen;
+}
+
+.contact-info {
+  display: flex;
+  gap: 2rem;
 }
