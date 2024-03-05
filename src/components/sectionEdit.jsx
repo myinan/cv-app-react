@@ -81,90 +81,101 @@ function PersonalField({ personInfo, setPersonInfo }) {
   );
 }
 
-function EducationInstance({ personInfo, setPersonInfo }) {
+function EducationInstance({ personInfo, setPersonInfo, index }) {
   const deepClone = structuredClone(personInfo);
+  const cur = deepClone.educationInfo[index];
 
   return (
-    <>
+    <div className="education-instance">
       <div className="input-group">
-        <label htmlFor="school-name">School</label>
+        <label htmlFor={`school-name:${index}`}>School</label>
         <input
-          id="school-name"
+          id={`school-name:${index}`}
           placeholder="School name"
-          value={personInfo.educationInfo[0].schoolName}
+          value={cur.schoolName}
           onChange={(e) => {
-            deepClone.educationInfo[0].schoolName = e.target.value;
+            cur.schoolName = e.target.value;
             setPersonInfo(deepClone);
           }}
         ></input>
       </div>
 
       <div className="input-group">
-        <label htmlFor="degree">Degree</label>
+        <label htmlFor={`degree:${index}`}>Degree</label>
         <input
-          id="degree"
+          id={`degree:${index}`}
           placeholder="Degree"
-          value={personInfo.educationInfo[0].degree}
+          value={cur.degree}
           onChange={(e) => {
-            deepClone.educationInfo[0].degree = e.target.value;
+            cur.degree = e.target.value;
             setPersonInfo(deepClone);
           }}
         ></input>
       </div>
 
       <div className="input-group">
-        <label htmlFor="start-date">Start Date</label>
+        <label htmlFor={`start-date:${index}`}>Start Date</label>
         <input
-          id="start-date"
+          id={`start-date:${index}`}
           placeholder="Start date"
-          value={personInfo.educationInfo[0].startDate}
+          value={cur.startDate}
           onChange={(e) => {
-            deepClone.educationInfo[0].startDate = e.target.value;
+            cur.startDate = e.target.value;
             setPersonInfo(deepClone);
           }}
         ></input>
       </div>
 
       <div className="input-group">
-        <label htmlFor="end-date">End Date</label>
+        <label htmlFor={`end-date:${index}`}>End Date</label>
         <input
-          id="end-date"
+          id={`end-date:${index}`}
           placeholder="End date"
-          value={personInfo.educationInfo[0].endDate}
+          value={cur.endDate}
           onChange={(e) => {
-            deepClone.educationInfo[0].endDate = e.target.value;
+            cur.endDate = e.target.value;
             setPersonInfo(deepClone);
           }}
         ></input>
       </div>
 
       <div className="input-group">
-        <label htmlFor="location">Location</label>
+        <label htmlFor={`location:${index}`}>Location</label>
         <input
-          id="location"
+          id={`location:${index}`}
           placeholder="Location"
-          value={personInfo.educationInfo[0].location}
+          value={cur.location}
           onChange={(e) => {
-            deepClone.educationInfo[0].location = e.target.value;
+            cur.location = e.target.value;
             setPersonInfo(deepClone);
           }}
         ></input>
       </div>
-    </>
+    </div>
   );
 }
 
-function EducationField({ children }) {
+function EducationField({ personInfo, setPersonInfo }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
+  const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
   return (
     <div className="education-details">
-      <button onClick={toggleMenu}>Education</button>
-      {isOpen && children}
+      <button onClick={toggleDropdown}>Education</button>
+      {isOpen &&
+        personInfo.educationInfo.map((instanceArr, index) => {
+          return (
+            <EducationInstance
+              key={`${instanceArr.schoolName}` + `${instanceArr.degree}`}
+              personInfo={personInfo}
+              setPersonInfo={setPersonInfo}
+              index={index}
+            />
+          );
+        })}
     </div>
   );
 }
@@ -173,12 +184,7 @@ function EditSection({ personInfo, setPersonInfo }) {
   return (
     <div className="edit-section">
       <PersonalField personInfo={personInfo} setPersonInfo={setPersonInfo} />
-      <EducationField>
-        <EducationInstance
-          personInfo={personInfo}
-          setPersonInfo={setPersonInfo}
-        />
-      </EducationField>
+      <EducationField personInfo={personInfo} setPersonInfo={setPersonInfo} />
     </div>
   );
 }

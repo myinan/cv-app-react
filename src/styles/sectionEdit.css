@@ -10,11 +10,10 @@
   flex-direction: column;
   padding: 1rem;
   gap: 0.5rem;
+  background-color: rgb(211, 229, 223);
 }
 
-.personal-details,
 .personal-details *,
-.education-details,
 .education-details * {
   background-color: white;
 }
