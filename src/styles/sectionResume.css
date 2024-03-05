@@ -10,7 +10,7 @@
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto 1fr;
   background-color: aqua;
 }
 
@@ -29,6 +29,16 @@
 }
 
 .contact-info {
+  display: flex;
+  gap: 2rem;
+}
+
+.education-info {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.education-instances-container {
   display: flex;
   gap: 2rem;
 }

@@ -85,18 +85,20 @@ function EducationInstance({ personInfo, setPersonInfo, index }) {
   const deepClone = structuredClone(personInfo);
   const cur = deepClone.educationInfo[index];
 
+  const handleInputChange = (e, field) => {
+    cur[field] = e.target.value;
+    setPersonInfo(deepClone);
+  };
+
   return (
-    <div className="education-instance">
+    <div className="education-instance-edit">
       <div className="input-group">
         <label htmlFor={`school-name:${index}`}>School</label>
         <input
           id={`school-name:${index}`}
           placeholder="School name"
           value={cur.schoolName}
-          onChange={(e) => {
-            cur.schoolName = e.target.value;
-            setPersonInfo(deepClone);
-          }}
+          onChange={(e) => handleInputChange(e, "schoolName")}
         ></input>
       </div>
 
@@ -106,10 +108,7 @@ function EducationInstance({ personInfo, setPersonInfo, index }) {
           id={`degree:${index}`}
           placeholder="Degree"
           value={cur.degree}
-          onChange={(e) => {
-            cur.degree = e.target.value;
-            setPersonInfo(deepClone);
-          }}
+          onChange={(e) => handleInputChange(e, "degree")}
         ></input>
       </div>
 
@@ -119,10 +118,7 @@ function EducationInstance({ personInfo, setPersonInfo, index }) {
           id={`start-date:${index}`}
           placeholder="Start date"
           value={cur.startDate}
-          onChange={(e) => {
-            cur.startDate = e.target.value;
-            setPersonInfo(deepClone);
-          }}
+          onChange={(e) => handleInputChange(e, "startDate")}
         ></input>
       </div>
 
@@ -132,10 +128,7 @@ function EducationInstance({ personInfo, setPersonInfo, index }) {
           id={`end-date:${index}`}
           placeholder="End date"
           value={cur.endDate}
-          onChange={(e) => {
-            cur.endDate = e.target.value;
-            setPersonInfo(deepClone);
-          }}
+          onChange={(e) => handleInputChange(e, "endDate")}
         ></input>
       </div>
 
@@ -145,10 +138,7 @@ function EducationInstance({ personInfo, setPersonInfo, index }) {
           id={`location:${index}`}
           placeholder="Location"
           value={cur.location}
-          onChange={(e) => {
-            cur.location = e.target.value;
-            setPersonInfo(deepClone);
-          }}
+          onChange={(e) => handleInputChange(e, "location")}
         ></input>
       </div>
     </div>
@@ -169,7 +159,7 @@ function EducationField({ personInfo, setPersonInfo }) {
         personInfo.educationInfo.map((instanceArr, index) => {
           return (
             <EducationInstance
-              key={`${instanceArr.schoolName}` + `${instanceArr.degree}`}
+              key={index}
               personInfo={personInfo}
               setPersonInfo={setPersonInfo}
               index={index}

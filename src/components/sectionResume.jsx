@@ -17,12 +17,18 @@ function EducationInfo({ personInfo }) {
   return (
     <div className="education-info">
       <h1>Education</h1>
-      <div className="education-instance">
-        <p>{personInfo.educationInfo[0].schoolName}</p>
-        <p>{personInfo.educationInfo[0].degree}</p>
-        <p>{personInfo.educationInfo[0].startDate}</p>
-        <p>{personInfo.educationInfo[0].endDate}</p>
-        <p>{personInfo.educationInfo[0].location}</p>
+      <div className="education-instances-container">
+        {personInfo.educationInfo.map((instance, index) => {
+          return (
+            <div className="education-instance-resume" key={index}>
+              <p>{instance.schoolName}</p>
+              <p>{instance.degree}</p>
+              <p>{instance.startDate}</p>
+              <p>{instance.endDate}</p>
+              <p>{instance.location}</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
