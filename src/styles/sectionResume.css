@@ -4,6 +4,7 @@
     0 8px 16px -8px rgba(0, 0, 0, 0.25);
   height: 29.7cm;
   width: 21cm;
+  cursor: default;
 }
 
 .resume-section {
@@ -11,7 +12,7 @@
   width: 100%;
   display: grid;
   grid-template-rows: auto auto 1fr;
-  background-color: aqua;
+  background-color: var(--main-bg);
 }
 
 .personal-info {
@@ -25,10 +26,11 @@
 
 .personal-info,
 .personal-info * {
-  background-color: yellowgreen;
+  background-color: var(--resume-header-bg);
+  color: var(--main-bg);
 }
 
-.contact-info {
+.personal-info .contact-info {
   display: flex;
   gap: 2rem;
 }
@@ -36,9 +38,27 @@
 .education-info {
   display: grid;
   grid-template-rows: auto 1fr;
+  margin: 2rem;
 }
 
-.education-instances-container {
+.education-info h1 {
   display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent-bg);
+  font-size: 1.5rem;
+  padding: 0.3rem;
+}
+
+.education-info .education-instances-container {
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
+  margin: 1rem 0rem;
+}
+
+.education-instances-container .education-instance-resume {
+  display: flex;
+  gap: 3rem;
 }

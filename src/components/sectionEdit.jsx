@@ -84,13 +84,20 @@ function PersonalField({ personInfo, setPersonInfo }) {
 function EducationInstance({ personInfo, setPersonInfo, index }) {
   const deepClone = structuredClone(personInfo);
   const cur = deepClone.educationInfo[index];
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
 
   const handleInputChange = (e, field) => {
     cur[field] = e.target.value;
     setPersonInfo(deepClone);
   };
 
-  return (
+  return !isOpen ? (
+    <button onClick={toggleDropdown}>{cur.schoolName}</button>
+  ) : (
     <div className="education-instance-edit">
       <div className="input-group">
         <label htmlFor={`school-name:${index}`}>School</label>
@@ -141,6 +148,8 @@ function EducationInstance({ personInfo, setPersonInfo, index }) {
           onChange={(e) => handleInputChange(e, "location")}
         ></input>
       </div>
+
+      <button onClick={toggleDropdown}>Close</button>
     </div>
   );
 }

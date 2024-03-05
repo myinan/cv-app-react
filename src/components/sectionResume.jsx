@@ -21,11 +21,17 @@ function EducationInfo({ personInfo }) {
         {personInfo.educationInfo.map((instance, index) => {
           return (
             <div className="education-instance-resume" key={index}>
-              <p>{instance.schoolName}</p>
-              <p>{instance.degree}</p>
-              <p>{instance.startDate}</p>
-              <p>{instance.endDate}</p>
-              <p>{instance.location}</p>
+              <div className="education-info-group">
+                <p className="dates">
+                  {instance.startDate} - {instance.endDate}
+                </p>
+                <p className="location">{instance.location}</p>
+              </div>
+
+              <div className="education-info-group">
+                <p className="schoolName">{instance.schoolName}</p>
+                <p className="degree">{instance.degree}</p>
+              </div>
             </div>
           );
         })}

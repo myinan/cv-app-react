@@ -1,6 +1,17 @@
+:root {
+  --main-bg: #ffffff;
+  --accent-bg: #e2e8f0;
+  --resume-header-bg: #0e374e;
+  --border: #7dd3fc;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: gray;
+}
+
+@font-face {
+  font-family: "NotoSans-SemiBold";
+  src: url("./assets/NotoSans-SemiBold.ttf");
 }
