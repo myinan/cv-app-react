@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "../styles/sectionEdit.css";
 
 function PersonalField({ personInfo, setPersonInfo }) {
@@ -80,13 +81,11 @@ function PersonalField({ personInfo, setPersonInfo }) {
   );
 }
 
-function EducationField({ personInfo, setPersonInfo }) {
+function EducationInstance({ personInfo, setPersonInfo }) {
   const deepClone = structuredClone(personInfo);
 
   return (
-    <div className="education-details">
-      <h2>Education</h2>
-
+    <>
       <div className="input-group">
         <label htmlFor="school-name">School</label>
         <input
@@ -151,6 +150,21 @@ function EducationField({ personInfo, setPersonInfo }) {
           }}
         ></input>
       </div>
+    </>
+  );
+}
+
+function EducationField({ children }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <div className="education-details">
+      <button onClick={toggleMenu}>Education</button>
+      {isOpen && children}
     </div>
   );
 }
@@ -159,7 +173,12 @@ function EditSection({ personInfo, setPersonInfo }) {
   return (
     <div className="edit-section">
       <PersonalField personInfo={personInfo} setPersonInfo={setPersonInfo} />
-      <EducationField personInfo={personInfo} setPersonInfo={setPersonInfo} />
+      <EducationField>
+        <EducationInstance
+          personInfo={personInfo}
+          setPersonInfo={setPersonInfo}
+        />
+      </EducationField>
     </div>
   );
 }
