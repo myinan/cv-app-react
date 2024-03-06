@@ -20,7 +20,7 @@ function EducationInstance({
   return activeIndex === null ? (
     <button onClick={() => setActiveIndex(index)}>{cur.schoolName}</button>
   ) : activeIndex !== index ? null : (
-    <div className="education-instance-edit">
+    <div className="edEx-instance-edit">
       <div className="input-group">
         <label htmlFor={`school-name:${index}`}>School</label>
         <input
@@ -128,11 +128,11 @@ function AddEducationPanel({
   };
 
   return activeIndex === null ? (
-    <div className="add-education-btn-container">
+    <div className="add-edEx-btn-container">
       <button onClick={() => setActiveIndex(index)}>+ Education</button>
     </div>
   ) : activeIndex !== index ? null : (
-    <div className="education-instance-edit">
+    <div className="edEx-instance-edit">
       <div className="input-group">
         <label htmlFor={`school-name:${index}`}>School</label>
         <input
@@ -201,7 +201,7 @@ function EducationField({
   };
 
   return (
-    <div className="education-details">
+    <div className="edEx-details">
       <button onClick={toggleDropdown}>Education</button>
       {isOpen && (
         <>

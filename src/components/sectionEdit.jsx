@@ -1,6 +1,7 @@
 import "../styles/sectionEdit.css";
 import PersonalField from "./personalFieldEdit";
 import EducationField from "./educationFieldEdit";
+import ExperienceField from "./experienceFieldEdit";
 
 function EditSection({
   personInfo,
@@ -16,6 +17,12 @@ function EditSection({
         setOriginalPersonInfo={setOriginalPersonInfo}
       />
       <EducationField
+        personInfo={personInfo}
+        setPersonInfo={setPersonInfo}
+        originalPersonInfo={originalPersonInfo}
+        setOriginalPersonInfo={setOriginalPersonInfo}
+      />
+      <ExperienceField
         personInfo={personInfo}
         setPersonInfo={setPersonInfo}
         originalPersonInfo={originalPersonInfo}

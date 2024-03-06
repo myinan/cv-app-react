@@ -24,10 +24,14 @@
 }
 
 .personal-details h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
-.education-details {
+.personal-details label {
+  font-size: 1.1rem;
+}
+
+.edEx-details {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -40,35 +44,35 @@
     0 8px 16px -8px rgba(0, 0, 0, 0.25);
 }
 
-.education-details * {
+.edEx-details * {
   background-color: var(--main-bg);
 }
 
-.education-details > * {
+.edEx-details > * {
   padding: 1rem;
 }
 
-.education-details > button {
+.edEx-details > button {
   display: flex;
   justify-content: flex-start;
   cursor: pointer;
   border: none;
   outline: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-family: "NotoSans-SemiBold";
 }
 
-.education-details > button:first-child {
-  font-size: 2rem;
+.edEx-details > button:first-child {
+  font-size: 1.5rem;
 }
 
-.education-details .add-education-btn-container {
+.edEx-details .add-edEx-btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.add-education-btn-container button {
+.add-edEx-btn-container button {
   display: flex;
   justify-content: flex-start;
   cursor: pointer;
@@ -80,13 +84,17 @@
   padding: 0.5rem 0.8rem;
 }
 
-.education-details .education-instance-edit {
+.edEx-details .edEx-instance-edit {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
 }
 
-.education-instance-edit .buttons-group {
+.edEx-instance-edit label {
+  font-size: 1.1rem;
+}
+
+.edEx-instance-edit .buttons-group {
   display: flex;
   gap: 1rem;
 }
@@ -122,9 +130,9 @@
   font-size: 1.2rem;
 }
 
-.input-group input {
+.input-group input,
+.input-group textarea {
   padding: 0.5rem;
-  font-size: 1rem;
   border: 2px solid transparent;
   outline: none;
   border-radius: 0.3rem;
@@ -134,7 +142,16 @@
     box-shadow 0.25s;
 }
 
-.input-group input:focus {
+.input-group input:focus,
+.input-group textarea:focus {
   border: 2px solid var(--border);
   box-shadow: 0px 0px 72px -25px var(--border);
+}
+
+.input-group input {
+  font-size: 1rem;
+}
+
+.input-group textarea {
+  resize: none;
 }

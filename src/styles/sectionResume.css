@@ -2,7 +2,7 @@
   box-shadow:
     0 13px 27px -5px rgba(50, 50, 93, 0.1),
     0 8px 16px -8px rgba(0, 0, 0, 0.25);
-  height: 29.7cm;
+  min-height: 29.7cm;
   width: 21cm;
   cursor: default;
 }
@@ -30,6 +30,10 @@
   color: var(--main-bg);
 }
 
+.personal-info h1 {
+  font-size: 2rem;
+}
+
 .personal-info .contact-info {
   display: flex;
   gap: 2rem;
@@ -47,7 +51,7 @@
   justify-content: center;
   align-items: center;
   background-color: var(--accent-bg);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding: 0.3rem;
 }
 
@@ -70,4 +74,48 @@
 
 .education-info-group .schoolName {
   font-family: "NotoSans-SemiBold";
+}
+
+.experience-info {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  margin: 0 2rem 2rem 2rem;
+}
+
+.experience-info h1 {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent-bg);
+  font-size: 1.3rem;
+  padding: 0.3rem;
+}
+
+.experience-info .experience-instances-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 1rem 0rem;
+}
+
+.experience-instances-container .experience-instance-resume {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 3rem;
+  row-gap: 0.3rem;
+}
+
+.experience-instance-resume .experience-info-group {
+  font-family: "NotoSans-Regular";
+}
+
+.experience-info-group .companyName {
+  font-family: "NotoSans-SemiBold";
+}
+
+.experience-instance-resume .description {
+  font-family: "NotoSans-Regular";
+  grid-area: 2 / 2 / 3 / 3;
 }

@@ -40,12 +40,42 @@ function EducationInfo({ personInfo }) {
   );
 }
 
+function ExperienceInfo({ personInfo }) {
+  return (
+    <div className="experience-info">
+      <h1>Professional Experience</h1>
+      <div className="experience-instances-container">
+        {personInfo.experienceInfo.map((instance, index) => {
+          return (
+            <div className="experience-instance-resume" key={index}>
+              <div className="experience-info-group">
+                <p className="dates">
+                  {instance.startDate} - {instance.endDate}
+                </p>
+                <p className="location">{instance.location}</p>
+              </div>
+
+              <div className="experience-info-group">
+                <p className="companyName">{instance.companyName}</p>
+                <p className="positionTitle">{instance.positionTitle}</p>
+              </div>
+
+              <p className="description">{instance.description}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function ResumeSection({ personInfo }) {
   return (
     <div className="resume-container">
       <div className="resume-section">
         <PersonalInfo personInfo={personInfo} />
         <EducationInfo personInfo={personInfo} />
+        <ExperienceInfo personInfo={personInfo} />
       </div>
     </div>
   );
