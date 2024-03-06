@@ -62,3 +62,11 @@
   display: flex;
   gap: 3rem;
 }
+
+.education-instance-resume .education-info-group {
+  font-family: "NotoSans-Regular";
+}
+
+.education-info-group .schoolName {
+  font-family: "NotoSans-SemiBold";
+}

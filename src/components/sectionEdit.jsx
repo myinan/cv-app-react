@@ -149,7 +149,11 @@ function EducationInstance({ personInfo, setPersonInfo, index }) {
         ></input>
       </div>
 
-      <button onClick={toggleDropdown}>Close</button>
+      <div className="buttons-group">
+        <button>Delete</button>
+        <button onClick={toggleDropdown}>Cancel</button>
+        <button>Save</button>
+      </div>
     </div>
   );
 }

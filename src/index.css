@@ -3,6 +3,8 @@
   --accent-bg: #e2e8f0;
   --resume-header-bg: #0e374e;
   --border: #7dd3fc;
+  --delete-btn-bg: #e11d48;
+  --save-btn-bg: #0284c7;
 }
 
 * {
@@ -14,4 +16,9 @@
 @font-face {
   font-family: "NotoSans-SemiBold";
   src: url("./assets/NotoSans-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "NotoSans-Regular";
+  src: url("./assets/NotoSans-Regular.ttf");
 }
