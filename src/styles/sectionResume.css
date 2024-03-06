@@ -59,7 +59,8 @@
 }
 
 .education-instances-container .education-instance-resume {
-  display: flex;
+  display: grid;
+  grid-template-columns: 150px 1fr;
   gap: 3rem;
 }
 

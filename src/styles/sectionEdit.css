@@ -62,6 +62,24 @@
   font-size: 2rem;
 }
 
+.education-details .add-education-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-education-btn-container button {
+  display: flex;
+  justify-content: flex-start;
+  cursor: pointer;
+  border: 2px solid var(--accent-bg);
+  border-radius: 1rem;
+  outline: none;
+  font-size: 1rem;
+  font-family: "NotoSans-SemiBold";
+  padding: 0.5rem 0.8rem;
+}
+
 .education-details .education-instance-edit {
   display: flex;
   flex-direction: column;
