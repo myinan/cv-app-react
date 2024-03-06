@@ -10,7 +10,11 @@ function EditSection({
 }) {
   return (
     <div className="edit-section">
-      <PersonalField personInfo={personInfo} setPersonInfo={setPersonInfo} />
+      <PersonalField
+        personInfo={personInfo}
+        setPersonInfo={setPersonInfo}
+        setOriginalPersonInfo={setOriginalPersonInfo}
+      />
       <EducationField
         personInfo={personInfo}
         setPersonInfo={setPersonInfo}

@@ -1,4 +1,4 @@
-function PersonalField({ personInfo, setPersonInfo }) {
+function PersonalField({ personInfo, setPersonInfo, setOriginalPersonInfo }) {
   return (
     <div className="personal-details">
       <h2>Personal Details</h2>
@@ -9,15 +9,18 @@ function PersonalField({ personInfo, setPersonInfo }) {
           id="full-name"
           placeholder="First and last name"
           value={personInfo.personalInfo.fullName}
-          onChange={(e) =>
-            setPersonInfo({
+          onChange={(e) => {
+            const obj = {
               ...personInfo,
               personalInfo: {
                 ...personInfo.personalInfo,
                 fullName: e.target.value,
               },
-            })
-          }
+            };
+
+            setPersonInfo(obj);
+            setOriginalPersonInfo(obj);
+          }}
         ></input>
       </div>
 
@@ -27,15 +30,18 @@ function PersonalField({ personInfo, setPersonInfo }) {
           id="mail"
           placeholder="Enter email"
           value={personInfo.personalInfo.mail}
-          onChange={(e) =>
-            setPersonInfo({
+          onChange={(e) => {
+            const obj = {
               ...personInfo,
               personalInfo: {
                 ...personInfo.personalInfo,
                 mail: e.target.value,
               },
-            })
-          }
+            };
+
+            setPersonInfo(obj);
+            setOriginalPersonInfo(obj);
+          }}
         ></input>
       </div>
 
@@ -45,15 +51,18 @@ function PersonalField({ personInfo, setPersonInfo }) {
           id="phone"
           placeholder="Enter phone number"
           value={personInfo.personalInfo.phone}
-          onChange={(e) =>
-            setPersonInfo({
+          onChange={(e) => {
+            const obj = {
               ...personInfo,
               personalInfo: {
                 ...personInfo.personalInfo,
                 phone: e.target.value,
               },
-            })
-          }
+            };
+
+            setPersonInfo(obj);
+            setOriginalPersonInfo(obj);
+          }}
         ></input>
       </div>
 
@@ -63,15 +72,18 @@ function PersonalField({ personInfo, setPersonInfo }) {
           id="address"
           placeholder="City, Country"
           value={personInfo.personalInfo.address}
-          onChange={(e) =>
-            setPersonInfo({
+          onChange={(e) => {
+            const obj = {
               ...personInfo,
               personalInfo: {
                 ...personInfo.personalInfo,
                 address: e.target.value,
               },
-            })
-          }
+            };
+
+            setPersonInfo(obj);
+            setOriginalPersonInfo(obj);
+          }}
         ></input>
       </div>
     </div>
