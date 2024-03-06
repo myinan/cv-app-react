@@ -3,6 +3,8 @@ import { useState } from "react";
 function EducationInstance({
   personInfo,
   setPersonInfo,
+  originalPersonInfo,
+  setOriginalPersonInfo,
   index,
   activeIndex,
   setActiveIndex,
@@ -70,9 +72,33 @@ function EducationInstance({
       </div>
 
       <div className="buttons-group">
-        <button>Delete</button>
-        <button onClick={() => setActiveIndex(null)}>Cancel</button>
-        <button>Save</button>
+        <button
+          onClick={() => {
+            deepClone.educationInfo.splice(index, 1);
+            setOriginalPersonInfo(deepClone);
+            setPersonInfo(deepClone);
+            setActiveIndex(null);
+          }}
+        >
+          Delete
+        </button>
+        <button
+          onClick={() => {
+            setPersonInfo(originalPersonInfo);
+            setActiveIndex(null);
+          }}
+        >
+          Cancel
+        </button>
+        <button
+          onClick={() => {
+            setOriginalPersonInfo(deepClone);
+            setPersonInfo(deepClone);
+            setActiveIndex(null);
+          }}
+        >
+          Save
+        </button>
       </div>
     </div>
   );
@@ -153,7 +179,7 @@ function AddEducationPanel({
       </div>
 
       <div className="buttons-group">
-        <button>Delete</button>
+        <button style={{ visibility: "hidden" }}>Delete</button>
         <button onClick={() => setActiveIndex(null)}>Cancel</button>
         <button>Save</button>
       </div>
@@ -161,7 +187,12 @@ function AddEducationPanel({
   );
 }
 
-function EducationField({ personInfo, setPersonInfo }) {
+function EducationField({
+  personInfo,
+  setPersonInfo,
+  originalPersonInfo,
+  setOriginalPersonInfo,
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -180,6 +211,8 @@ function EducationField({ personInfo, setPersonInfo }) {
                 key={index}
                 personInfo={personInfo}
                 setPersonInfo={setPersonInfo}
+                originalPersonInfo={originalPersonInfo}
+                setOriginalPersonInfo={setOriginalPersonInfo}
                 index={index}
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex}

@@ -2,37 +2,22 @@ import { useState } from "react";
 import "../styles/App.css";
 import EditSection from "./sectionEdit";
 import ResumeSection from "./sectionResume";
+import personInfoData, { originalPersonInfoData } from "./personInfo";
 
 function App() {
-  const [personInfo, setPersonInfo] = useState({
-    personalInfo: {
-      fullName: "Yasir İnan",
-      mail: "m.yasir.inan@gmail.com",
-      phone: "+90 123 456 7889",
-      address: "Bursa, Turkey",
-    },
-    educationInfo: [
-      {
-        schoolName: "London City University",
-        degree: "Bachelors in Economics",
-        startDate: "08/2020",
-        endDate: "present",
-        location: "New York City, US",
-      },
-      {
-        schoolName: "Hidden University",
-        degree: "Master's Degree in Math",
-        startDate: "10/2020",
-        endDate: "present",
-        location: "Istanbul, TR",
-      },
-    ],
-    experienceInfo: [],
-  });
+  const [personInfo, setPersonInfo] = useState(personInfoData);
+  const [originalPersonInfo, setOriginalPersonInfo] = useState(
+    originalPersonInfoData
+  );
 
   return (
     <div className="app">
-      <EditSection personInfo={personInfo} setPersonInfo={setPersonInfo} />
+      <EditSection
+        personInfo={personInfo}
+        setPersonInfo={setPersonInfo}
+        originalPersonInfo={originalPersonInfo}
+        setOriginalPersonInfo={setOriginalPersonInfo}
+      />
       <ResumeSection personInfo={personInfo} />
     </div>
   );
