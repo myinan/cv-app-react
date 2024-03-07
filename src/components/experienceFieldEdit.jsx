@@ -224,8 +224,10 @@ function ExperienceField({
   };
 
   return (
-    <div className="edEx-details">
-      <button onClick={toggleDropdown}>Experience</button>
+    <div className={`edEx-details ${isOpen ? "open" : "closed"}`}>
+      <button onClick={toggleDropdown}>
+        <span>Experience</span>
+      </button>
       {isOpen && (
         <>
           {personInfo.experienceInfo.map((instanceArr, index) => {

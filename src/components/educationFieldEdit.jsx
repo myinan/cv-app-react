@@ -201,8 +201,10 @@ function EducationField({
   };
 
   return (
-    <div className="edEx-details">
-      <button onClick={toggleDropdown}>Education</button>
+    <div className={`edEx-details ${isOpen ? "open" : "closed"}`}>
+      <button onClick={toggleDropdown}>
+        <span>Education</span>
+      </button>
       {isOpen && (
         <>
           {personInfo.educationInfo.map((instanceArr, index) => {
