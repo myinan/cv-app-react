@@ -1,4 +1,5 @@
 import "../styles/sectionEdit.css";
+import TemplateLoader from "./templateLoader";
 import PersonalField from "./personalFieldEdit";
 import EducationField from "./educationFieldEdit";
 import ExperienceField from "./experienceFieldEdit";
@@ -11,6 +12,10 @@ function EditSection({
 }) {
   return (
     <div className="edit-section">
+      <TemplateLoader
+        setPersonInfo={setPersonInfo}
+        setOriginalPersonInfo={setOriginalPersonInfo}
+      />
       <PersonalField
         personInfo={personInfo}
         setPersonInfo={setPersonInfo}

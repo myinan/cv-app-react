@@ -5,9 +5,23 @@ function PersonalInfo({ personInfo }) {
     <div className="personal-info">
       <h1 className="resume-name">{personInfo.personalInfo.fullName}</h1>
       <div className="contact-info">
-        <div>{personInfo.personalInfo.mail}</div>
-        <div>{personInfo.personalInfo.phone}</div>
-        <div>{personInfo.personalInfo.address}</div>
+        <div className="mail-container">
+          {personInfo.personalInfo.mail !== "" && (
+            <div>{personInfo.personalInfo.mail}</div>
+          )}
+        </div>
+
+        <div className="phone-container">
+          {personInfo.personalInfo.phone !== "" && (
+            <div>{personInfo.personalInfo.phone}</div>
+          )}
+        </div>
+
+        <div className="address-container">
+          {personInfo.personalInfo.address !== "" && (
+            <div>{personInfo.personalInfo.address}</div>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -46,21 +46,21 @@
   gap: 0.4rem;
 }
 
-.contact-info div:nth-child(1)::before {
+.contact-info .mail-container div::before {
   content: url("../assets/email.svg");
   display: inline-block;
   width: 24px;
   height: 24px;
 }
 
-.contact-info div:nth-child(2)::before {
+.contact-info .phone-container div::before {
   content: url("../assets/phone.svg");
   display: inline-block;
   width: 24px;
   height: 24px;
 }
 
-.contact-info div:nth-child(3)::before {
+.contact-info .address-container div::before {
   content: url("../assets/location.svg");
   display: inline-block;
   width: 24px;

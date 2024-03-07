@@ -6,6 +6,47 @@
   max-width: 450px;
 }
 
+.template-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--main-bg);
+  border-radius: 0.5rem;
+  box-shadow:
+    0 13px 27px -5px rgba(50, 50, 93, 0.1),
+    0 8px 16px -8px rgba(0, 0, 0, 0.25);
+}
+
+.template-loader button {
+  font-family: "NotoSans-SemiBold";
+  font-size: 0.9rem;
+  border: none;
+  outline: none;
+  width: 50%;
+  padding: 0.3rem 0.3rem;
+  background-color: var(--accent-bg);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.template-loader button:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3vw;
+  color: #dc2626;
+  background: none;
+}
+
+.template-loader button:first-child::before {
+  content: url("../assets/delete.svg");
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
 .personal-details {
   display: flex;
   flex-direction: column;
@@ -68,7 +109,7 @@
   font-size: 1.5rem;
 }
 
-.edit-section div:nth-child(2) > button:first-child::before {
+.edit-section > div:nth-child(3) > button:first-child::before {
   /* selects first instance of .edEx-details > button:first-child*/
   content: url("../assets/school.svg");
   display: inline-block;
@@ -76,7 +117,7 @@
   height: 30px;
 }
 
-.edit-section div:nth-child(3) > button:first-child::before {
+.edit-section > div:nth-child(4) > button:first-child::before {
   content: url("../assets/briefcase.svg");
   display: inline-block;
   width: 30px;
