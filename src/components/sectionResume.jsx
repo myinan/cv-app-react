@@ -83,7 +83,7 @@ function ExperienceInfo({ personInfo }) {
   );
 }
 
-function ResumeSection({ personInfo }) {
+function ResumeSection({ personInfo, resumeLayout }) {
   return (
     <div className="resume-container">
       <div className="resume-section">

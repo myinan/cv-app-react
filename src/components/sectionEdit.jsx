@@ -14,6 +14,7 @@ function EditSection({
   setPersonInfo,
   originalPersonInfo,
   setOriginalPersonInfo,
+  setResumeLayout,
 }) {
   const [isSelected, setIsSelected] = useState("content");
 
@@ -25,7 +26,7 @@ function EditSection({
         setOriginalPersonInfo={setOriginalPersonInfo}
       />
       {isSelected !== "content" ? (
-        <CustomizationField />
+        <CustomizationField setResumeLayout={setResumeLayout} />
       ) : (
         <>
           <PersonalField

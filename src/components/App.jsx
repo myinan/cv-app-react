@@ -9,6 +9,7 @@ function App() {
   const [originalPersonInfo, setOriginalPersonInfo] = useState(
     originalPersonInfoData
   );
+  const [resumeLayout, setResumeLayout] = useState("top");
 
   return (
     <div className="app">
@@ -17,8 +18,9 @@ function App() {
         setPersonInfo={setPersonInfo}
         originalPersonInfo={originalPersonInfo}
         setOriginalPersonInfo={setOriginalPersonInfo}
+        setResumeLayout={setResumeLayout}
       />
-      <ResumeSection personInfo={personInfo} />
+      <ResumeSection personInfo={personInfo} resumeLayout={resumeLayout} />
     </div>
   );
 }
