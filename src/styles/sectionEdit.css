@@ -6,6 +6,57 @@
   max-width: 450px;
 }
 
+.customize-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--main-bg);
+  border-radius: 0.5rem;
+  box-shadow:
+    0 13px 27px -5px rgba(50, 50, 93, 0.1),
+    0 8px 16px -8px rgba(0, 0, 0, 0.25);
+}
+
+.customize-container button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "NotoSans-SemiBold";
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  background-color: var(--accent-bg);
+  border-radius: 0.5rem;
+  min-width: 120px;
+  cursor: pointer;
+}
+
+.customize-container .content-btn::before {
+  content: url("../assets/content.svg");
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+.customize-container .customize-btn::before {
+  content: url("../assets/customize.svg");
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+.customize-container .print-btn::before {
+  content: url("../assets/print.svg");
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
 .template-loader {
   display: flex;
   align-items: center;
@@ -113,32 +164,9 @@
   margin-right: auto;
 }
 
-.edit-section > div:nth-child(3) > button:first-child::before {
+.edit-section > div:nth-child(4) > button:first-child::before {
   /* selects first instance of .edEx-details > button:first-child*/
   content: url("../assets/school.svg");
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-}
-
-.edit-section > div:nth-child(3).closed > button:first-child::after {
-  /* selects first instance of .edEx-details > button:first-child*/
-  content: url("../assets/chevron-down.svg");
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-}
-
-.edit-section > div:nth-child(3).open > button:first-child::after {
-  /* selects first instance of .edEx-details > button:first-child*/
-  content: url("../assets/chevron-up.svg");
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-}
-
-.edit-section > div:nth-child(4) > button:first-child::before {
-  content: url("../assets/briefcase.svg");
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -153,6 +181,29 @@
 }
 
 .edit-section > div:nth-child(4).open > button:first-child::after {
+  /* selects first instance of .edEx-details > button:first-child*/
+  content: url("../assets/chevron-up.svg");
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.edit-section > div:nth-child(5) > button:first-child::before {
+  content: url("../assets/briefcase.svg");
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.edit-section > div:nth-child(5).closed > button:first-child::after {
+  /* selects first instance of .edEx-details > button:first-child*/
+  content: url("../assets/chevron-down.svg");
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.edit-section > div:nth-child(5).open > button:first-child::after {
   /* selects first instance of .edEx-details > button:first-child*/
   content: url("../assets/chevron-up.svg");
   display: inline-block;
