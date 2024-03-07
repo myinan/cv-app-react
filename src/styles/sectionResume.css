@@ -36,7 +36,35 @@
 
 .personal-info .contact-info {
   display: flex;
+  align-items: center;
   gap: 2rem;
+}
+
+.contact-info div {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.contact-info div:nth-child(1)::before {
+  content: url("../assets/email.svg");
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+.contact-info div:nth-child(2)::before {
+  content: url("../assets/phone.svg");
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+.contact-info div:nth-child(3)::before {
+  content: url("../assets/location.svg");
+  display: inline-block;
+  width: 24px;
+  height: 24px;
 }
 
 .education-info {

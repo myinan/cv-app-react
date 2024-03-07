@@ -63,7 +63,24 @@
 }
 
 .edEx-details > button:first-child {
+  gap: 1rem;
+  align-items: center;
   font-size: 1.5rem;
+}
+
+.edit-section div:nth-child(2) > button:first-child::before {
+  /* selects first instance of .edEx-details > button:first-child*/
+  content: url("../assets/school.svg");
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.edit-section div:nth-child(3) > button:first-child::before {
+  content: url("../assets/briefcase.svg");
+  display: inline-block;
+  width: 30px;
+  height: 30px;
 }
 
 .edEx-details .add-edEx-btn-container {
