@@ -1,4 +1,6 @@
-import "../styles/sectionResume.css";
+import "../styles/sectionResumeTop.css";
+import "../styles/sectionResumeLeft.css";
+import "../styles/sectionResumeRight.css";
 
 function PersonalInfo({ personInfo }) {
   return (
@@ -86,7 +88,15 @@ function ExperienceInfo({ personInfo }) {
 function ResumeSection({ personInfo, resumeLayout }) {
   return (
     <div className="resume-container">
-      <div className="resume-section">
+      <div
+        className={`resume-section ${
+          resumeLayout === "top"
+            ? "top"
+            : resumeLayout === "left"
+              ? "left"
+              : "right"
+        }`}
+      >
         <PersonalInfo personInfo={personInfo} />
         <EducationInfo personInfo={personInfo} />
         <ExperienceInfo personInfo={personInfo} />

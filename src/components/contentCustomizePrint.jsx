@@ -38,26 +38,26 @@ function CustomizationField({ setResumeLayout }) {
 
 export { CustomizationField };
 
-function ContentCustomizePrintButtons({ setIsSelected }) {
+function ContentCustomizePrintButtons({ isSelected, setIsSelected }) {
   return (
     <div className="customize-container">
       <button
         type="button"
-        className="content-btn"
+        className={`content-btn ${isSelected === "content" ? "selected" : ""}`}
         onClick={() => setIsSelected("content")}
       >
         Content
       </button>
       <button
         type="button"
-        className="customize-btn"
+        className={`customize-btn ${isSelected === "customize" ? "selected" : ""}`}
         onClick={() => setIsSelected("customize")}
       >
         Customize
       </button>
       <button
         type="button"
-        className="print-btn"
+        className={`print-btn ${isSelected === "print" ? "selected" : ""}`}
         onClick={() => setIsSelected("print")}
       >
         Print

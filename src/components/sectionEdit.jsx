@@ -20,7 +20,10 @@ function EditSection({
 
   return (
     <div className="edit-section">
-      <ContentCustomizePrintButtons setIsSelected={setIsSelected} />
+      <ContentCustomizePrintButtons
+        isSelected={isSelected}
+        setIsSelected={setIsSelected}
+      />
       <TemplateLoader
         setPersonInfo={setPersonInfo}
         setOriginalPersonInfo={setOriginalPersonInfo}
