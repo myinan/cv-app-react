@@ -1,4 +1,4 @@
-function CustomizationField({ setResumeLayout }) {
+function CustomizationField({ setResumeLayout, resumeFont, setResumeFont }) {
   return (
     <>
       <div className="change-layout-container">
@@ -27,9 +27,30 @@ function CustomizationField({ setResumeLayout }) {
       <div className="change-font-container">
         <h1>Fonts</h1>
         <div className="font-buttons-container">
-          <button type="button">Serif</button>
-          <button type="button">Sans</button>
-          <button type="button">Mono</button>
+          <button
+            type="button"
+            onClick={() => setResumeFont("serif")}
+            className={`serif-btn ${resumeFont === "serif" ? "current" : ""}`}
+          >
+            <span className="font-test">Aa</span>
+            Serif
+          </button>
+          <button
+            type="button"
+            onClick={() => setResumeFont("sans")}
+            className={`sans-btn ${resumeFont === "sans" ? "current" : ""}`}
+          >
+            <span className="font-test">Aa</span>
+            Sans
+          </button>
+          <button
+            type="button"
+            onClick={() => setResumeFont("mono")}
+            className={`mono-btn ${resumeFont === "mono" ? "current" : ""}`}
+          >
+            <span className="font-test">Aa</span>
+            Mono
+          </button>
         </div>
       </div>
     </>

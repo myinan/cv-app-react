@@ -10,6 +10,7 @@ function App() {
     originalPersonInfoData
   );
   const [resumeLayout, setResumeLayout] = useState("top");
+  const [resumeFont, setResumeFont] = useState("sans");
 
   return (
     <div className="app">
@@ -19,8 +20,14 @@ function App() {
         originalPersonInfo={originalPersonInfo}
         setOriginalPersonInfo={setOriginalPersonInfo}
         setResumeLayout={setResumeLayout}
+        resumeFont={resumeFont}
+        setResumeFont={setResumeFont}
       />
-      <ResumeSection personInfo={personInfo} resumeLayout={resumeLayout} />
+      <ResumeSection
+        personInfo={personInfo}
+        resumeLayout={resumeLayout}
+        resumeFont={resumeFont}
+      />
     </div>
   );
 }

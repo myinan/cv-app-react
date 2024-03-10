@@ -1,6 +1,7 @@
 import "../styles/sectionResumeTop.css";
 import "../styles/sectionResumeLeft.css";
 import "../styles/sectionResumeRight.css";
+import "../styles/sectionResumeFonts.css";
 
 function PersonalInfo({ personInfo }) {
   return (
@@ -85,7 +86,7 @@ function ExperienceInfo({ personInfo }) {
   );
 }
 
-function ResumeSection({ personInfo, resumeLayout }) {
+function ResumeSection({ personInfo, resumeLayout, resumeFont }) {
   return (
     <div className="resume-container">
       <div
@@ -95,7 +96,7 @@ function ResumeSection({ personInfo, resumeLayout }) {
             : resumeLayout === "left"
               ? "left"
               : "right"
-        }`}
+        } ${resumeFont === "serif" ? "serif" : resumeFont === "sans" ? "sans" : "mono"}`}
       >
         <PersonalInfo personInfo={personInfo} />
         <EducationInfo personInfo={personInfo} />

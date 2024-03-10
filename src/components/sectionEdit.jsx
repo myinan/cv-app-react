@@ -15,6 +15,8 @@ function EditSection({
   originalPersonInfo,
   setOriginalPersonInfo,
   setResumeLayout,
+  resumeFont,
+  setResumeFont,
 }) {
   const [isSelected, setIsSelected] = useState("content");
 
@@ -29,7 +31,11 @@ function EditSection({
         setOriginalPersonInfo={setOriginalPersonInfo}
       />
       {isSelected !== "content" ? (
-        <CustomizationField setResumeLayout={setResumeLayout} />
+        <CustomizationField
+          resumeFont={resumeFont}
+          setResumeLayout={setResumeLayout}
+          setResumeFont={setResumeFont}
+        />
       ) : (
         <>
           <PersonalField

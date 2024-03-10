@@ -97,11 +97,11 @@
 }
 
 .resume-section.top .education-instance-resume .education-info-group {
-  font-family: "NotoSans-Regular";
+  font-weight: 500;
 }
 
 .resume-section.top .education-info-group .schoolName {
-  font-family: "NotoSans-SemiBold";
+  font-weight: 600;
 }
 
 .resume-section.top .experience-info {
@@ -138,14 +138,14 @@
 }
 
 .resume-section.top .experience-instance-resume .experience-info-group {
-  font-family: "NotoSans-Regular";
+  font-weight: 500;
 }
 
 .resume-section.top .experience-info-group .companyName {
-  font-family: "NotoSans-SemiBold";
+  font-weight: 600;
 }
 
 .resume-section.top .experience-instance-resume .description {
-  font-family: "NotoSans-Regular";
+  font-weight: 500;
   grid-area: 2 / 2 / 3 / 3;
 }

@@ -1,0 +1,14 @@
+.serif {
+  font-family: serif;
+  font-size: 1.2rem;
+}
+
+.sans {
+  font-family: "NotoSans-Regular";
+  font-size: 1rem;
+}
+
+.mono {
+  font-family: monospace;
+  font-size: 1rem;
+}
