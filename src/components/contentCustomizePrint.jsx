@@ -79,7 +79,10 @@ function ContentCustomizePrintButtons({ isSelected, setIsSelected }) {
       <button
         type="button"
         className={`print-btn ${isSelected === "print" ? "selected" : ""}`}
-        onClick={() => setIsSelected("print")}
+        onClick={() => {
+          setIsSelected("print");
+          window.print();
+        }}
       >
         Print
       </button>

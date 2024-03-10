@@ -1,0 +1,20 @@
+@media print {
+  @page {
+    margin: 0;
+  }
+
+  .app {
+    gap: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .app .edit-section {
+    display: none;
+  }
+
+  .app .resume-container {
+    box-shadow: none;
+    width: 100%;
+  }
+}

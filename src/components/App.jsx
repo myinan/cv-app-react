@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/App.css";
+import "../styles/printStyle.css";
 import EditSection from "./sectionEdit";
 import ResumeSection from "./sectionResume";
 import personInfoData, { originalPersonInfoData } from "./personInfo";
